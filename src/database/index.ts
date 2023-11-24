@@ -1,11 +1,19 @@
 import mongoose from "mongoose";
+import debugCreator from "debug";
+import chalk from "chalk";
+
+const debug = debugCreator("valvePipe:database");
 
 export const connectToDatabase = async (mongoUrl: string) => {
   try {
     await mongoose.connect(mongoUrl);
     mongoose.set("debug", true);
-    // Mensaje para cuando se ha conectado 🐼
+    debug(chalk.greenBright("Connected to database"));
   } catch (error) {
-    // Mensaje para cuando no se ha conectado 🐇
+    debug(
+      chalk.redBright(
+        `Error can't connect to database: ${(error as Error).message}`,
+      ),
+    );
   }
 };
