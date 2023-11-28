@@ -1,3 +1,3 @@
 export const corsOptions = {
-  origin: "*",
+  origin: [process.env.CorsOrigin!],
 };

@@ -1,5 +1,5 @@
 import { type NextFunction, type Request, type Response } from "express";
-import CustomError from "../utils/CustomError";
+import CustomError from "../utils/CustomError.js";
 import debugCreator from "debug";
 import chalk from "chalk";
 
