@@ -36,10 +36,10 @@ describe("Given the method connectToDatabase", () => {
 
   describe("When is given a not mongosseDataBase Url as a param and call it", () => {
     test("Then it should call debug with 'Error can't connect to database:'", async () => {
-      const mongoDbUrl = "not a url";
+      const mongoDbUrl = {};
       const expectedMessage = "Error can't connect to database:";
 
-      await connectToDatabase(mongoDbUrl);
+      await connectToDatabase(mongoDbUrl as unknown as string);
 
       expect(logSpy.mock.calls[0][0]).toEqual(
         expect.stringContaining(expectedMessage),
