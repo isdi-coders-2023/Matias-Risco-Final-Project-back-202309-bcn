@@ -11,12 +11,13 @@ export const generalError = (
   res: Response,
   _next: NextFunction,
 ) => {
-  const privateMessage = error?.privateMessage ?? error.message;
+  const publicMessage = error?.message ?? "Error untracked in Api";
+  const privateMessage = error?.privateMessage ?? publicMessage;
   const statusCode = error?.statusCode ?? 500;
 
   debug(chalk.redBright(privateMessage));
 
-  res.status(statusCode).json({ message: error.message });
+  res.status(statusCode).json({ message: publicMessage });
 };
 
 export const endpointNotFound = (
