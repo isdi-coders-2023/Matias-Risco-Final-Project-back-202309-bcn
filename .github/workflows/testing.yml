@@ -6,6 +6,9 @@ jobs:
   test:
     name: Tests passes
     runs-on: ubuntu-latest
+    env:
+      PORT: ${{secrets.PORT}}
+      DEBUG: ${{secrets.DEBUG}}
 
     steps:
       - name: ⬇ Git checkout
