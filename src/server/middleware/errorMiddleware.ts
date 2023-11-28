@@ -1,5 +1,5 @@
 import { type NextFunction, type Request, type Response } from "express";
-import CustomError from "../utils/CustomError";
+import CustomError from "../utils/CustomError.js";
 import debugCreator from "debug";
 import chalk from "chalk";
 
@@ -11,21 +11,25 @@ export const generalError = (
   res: Response,
   _next: NextFunction,
 ) => {
-  const privateMessage = error.privateMessage ?? error.message;
+  const publicMessage = error?.message ?? "Error untracked in Api";
+  const privateMessage = error?.privateMessage ?? publicMessage;
+  const statusCode = error?.statusCode ?? 500;
+
   debug(chalk.redBright(privateMessage));
 
-  res.status(error.statusCode).json({ message: error.message });
+  res.status(statusCode).json({ message: publicMessage });
 };
 
-export const methodNotFound = (
+export const endpointNotFound = (
   req: Request,
   _res: Response,
   next: NextFunction,
 ) => {
   const error = new CustomError(
     404,
-    "method not found",
-    `Requested method not foud: ${req.method} ${req.path}`,
+    "endpoint not found",
+    `Requested endpoint not found: ${req.method} ${req.path}`,
   );
+
   next(error);
 };
