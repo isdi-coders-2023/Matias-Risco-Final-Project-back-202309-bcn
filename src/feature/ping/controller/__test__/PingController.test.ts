@@ -5,7 +5,7 @@ beforeAll(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a PingController's method", () => {
+describe("Given a PingController's method getPong", () => {
   describe("When it receives a response", () => {
     const pingController = new PingController();
     const req = {};
@@ -22,7 +22,7 @@ describe("Given a PingController's method", () => {
       expect(responseMock.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
-    test("Then it should call the response's method json with '🏓'", () => {
+    test("Then it should call the response's method json with message '🏓'", () => {
       const expectMessage = { message: "🏓" };
 
       pingController.getPong(req as Request, responseMock as Response);
