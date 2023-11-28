@@ -11,21 +11,24 @@ export const generalError = (
   res: Response,
   _next: NextFunction,
 ) => {
-  const privateMessage = error.privateMessage ?? error.message;
+  const privateMessage = error?.privateMessage ?? error.message;
+  const statusCode = error?.statusCode ?? 500;
+
   debug(chalk.redBright(privateMessage));
 
-  res.status(error.statusCode).json({ message: error.message });
+  res.status(statusCode).json({ message: error.message });
 };
 
-export const methodNotFound = (
+export const endpointNotFound = (
   req: Request,
   _res: Response,
   next: NextFunction,
 ) => {
   const error = new CustomError(
     404,
-    "method not found",
-    `Requested method not foud: ${req.method} ${req.path}`,
+    "endpoint not found",
+    `Requested endpoint not found: ${req.method} ${req.path}`,
   );
+
   next(error);
 };
