@@ -1,5 +1,5 @@
 import { type NextFunction, type Request, type Response } from "express";
-import type CustomError from "../utils/CustomError";
+import CustomError from "../utils/CustomError";
 import debugCreator from "debug";
 import chalk from "chalk";
 
@@ -11,7 +11,21 @@ export const generalError = (
   res: Response,
   _next: NextFunction,
 ) => {
-  debug(chalk.redBright(error.privateMessage));
+  const privateMessage = error.privateMessage ?? error.message;
+  debug(chalk.redBright(privateMessage));
 
   res.status(error.statusCode).json({ message: error.message });
+};
+
+export const methodNotFound = (
+  req: Request,
+  _res: Response,
+  next: NextFunction,
+) => {
+  const error = new CustomError(
+    404,
+    "method not found",
+    `Requested method not foud: ${req.method} ${req.path}`,
+  );
+  next(error);
 };
