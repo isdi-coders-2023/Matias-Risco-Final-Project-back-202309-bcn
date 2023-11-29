@@ -13,6 +13,6 @@ app.use(cors(corsOptions));
 app.use(morgan("dev"));
 
 app.get("/", pingRouter);
-app.use(gamesRouter);
+app.use("/games", gamesRouter);
 app.use(endpointNotFound);
 app.use(generalError);

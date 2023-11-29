@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import { type GamesStructure } from "../types";
+import { type GameStructure } from "../types";
 
-const GameShema = new mongoose.Schema<GamesStructure>({
+const GameShema = new mongoose.Schema<GameStructure>({
   name: {
     type: String,
     required: true,

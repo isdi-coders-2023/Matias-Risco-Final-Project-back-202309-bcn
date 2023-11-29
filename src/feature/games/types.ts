@@ -30,7 +30,7 @@ type GameTime =
   | "Long"
   | "To infinity and beyond";
 
-export interface GamesStructure {
+export interface GameStructure {
   _id: string;
   name: string;
   plataforms: string[];
@@ -44,8 +44,8 @@ export interface GamesStructure {
   tags: string[];
 }
 
-export type GamesStructureWithOutId = Omit<GamesStructure, "_id">;
+export type GameStructureWithOutId = Omit<GameStructure, "_id">;
 
-export interface GamesStructureApi extends GamesStructureWithOutId {
+export interface GameStructureApi extends GameStructureWithOutId {
   id: string;
 }
