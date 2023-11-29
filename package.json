@@ -4,6 +4,10 @@
   "description": "",
   "type": "module",
   "main": "dist/index.js",
+  "engines": {
+    "npm": "^9",
+    "node": ">=20.6.1"
+  },
   "scripts": {
     "build:dev": "tsc --project tsconfig.build.json -w",
     "build": "tsc --project tsconfig.build.json",
