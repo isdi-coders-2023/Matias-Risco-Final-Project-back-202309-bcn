@@ -7,10 +7,12 @@ import {
   generalError,
   endpointNotFound,
 } from "./middleware/errorMiddleware.js";
+import gamesRouter from "../feature/games/router/gamesRouter.js";
 
 app.use(cors(corsOptions));
 app.use(morgan("dev"));
 
 app.get("/", pingRouter);
+app.use(gamesRouter);
 app.use(endpointNotFound);
 app.use(generalError);
