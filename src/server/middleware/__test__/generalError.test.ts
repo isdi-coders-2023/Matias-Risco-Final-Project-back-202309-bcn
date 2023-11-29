@@ -6,7 +6,7 @@ beforeAll(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a errorMiddleware method generalError", () => {
+describe("Given a errorMiddleware function generalError", () => {
   const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn().mockReturnThis(),

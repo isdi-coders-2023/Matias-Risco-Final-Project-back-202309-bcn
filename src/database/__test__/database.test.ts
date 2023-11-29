@@ -17,7 +17,7 @@ afterAll(async () => {
   logSpy.mockClear();
 });
 
-describe("Given the method connectToDatabase", () => {
+describe("Given the function connectToDatabase", () => {
   describe("When is given a mongosseDataBase Url as a param and call it", () => {
     test("Then it should call debug with 'Connected to database'", async () => {
       const server = await MongoMemoryServer.create();

@@ -6,7 +6,7 @@ beforeAll(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a errorMiddleware method endpointNotFound", () => {
+describe("Given a errorMiddleware function endpointNotFound", () => {
   describe("When it receives a req and next", () => {
     const req: Pick<Request, "method" | "path"> = {
       method: "",
