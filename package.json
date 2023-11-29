@@ -7,7 +7,7 @@
   "engines": {
     "npm": "^9",
     "node": ">=20.6.1",
-    "chalk": "^4.1.2"
+    "chalk": "4.1.2"
   },
   "scripts": {
     "build:dev": "tsc --project tsconfig.build.json -w",
