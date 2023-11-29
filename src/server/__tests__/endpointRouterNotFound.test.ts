@@ -1,7 +1,7 @@
 import request from "supertest";
 import app from "../app";
 
-describe("Given the endpoint endpointNotFound", () => {
+describe("Given the Get  endpointNotFound", () => {
   describe("When a Request without a endpoint or path it is recive", () => {
     test("it should send a response with a error 404 'endpoint not found'", async () => {
       const path = "/ergqiohujerdfgvwihopuj";

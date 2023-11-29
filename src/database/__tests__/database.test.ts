@@ -2,14 +2,17 @@ import MongoMemoryServer from "mongodb-memory-server-core";
 import debug from "debug";
 import { connectToDatabase } from "..";
 import mongoose from "mongoose";
+import { server } from "../../setUpTest";
 
 let logSpy: jest.SpyInstance<any, any[]>;
 
 beforeAll(async () => {
+  await mongoose.disconnect();
+  await server.stop();
   logSpy = jest.spyOn(debug, "log");
 });
 
-afterEach(() => {
+beforeEach(() => {
   logSpy.mockReset();
 });
 
@@ -17,7 +20,7 @@ afterAll(async () => {
   logSpy.mockClear();
 });
 
-describe("Given the method connectToDatabase", () => {
+describe("Given the function connectToDatabase", () => {
   describe("When is given a mongosseDataBase Url as a param and call it", () => {
     test("Then it should call debug with 'Connected to database'", async () => {
       const server = await MongoMemoryServer.create();

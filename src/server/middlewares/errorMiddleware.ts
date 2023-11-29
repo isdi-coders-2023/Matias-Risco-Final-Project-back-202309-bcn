@@ -1,7 +1,7 @@
 import { type NextFunction, type Request, type Response } from "express";
-import CustomError from "../utils/CustomError.js";
 import debugCreator from "debug";
 import chalk from "chalk";
+import CustomError from "../CustomError/CustomError.js";
 
 const debug = debugCreator("valvePipe:server:errorMiddleware");
 

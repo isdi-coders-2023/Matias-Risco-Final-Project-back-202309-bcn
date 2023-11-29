@@ -1,12 +1,12 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { endpointNotFound } from "../errorMiddleware";
-import type CustomError from "../../utils/CustomError";
+import type CustomError from "../../CustomError/CustomError";
 
 beforeAll(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a errorMiddleware method endpointNotFound", () => {
+describe("Given a errorMiddleware function endpointNotFound", () => {
   describe("When it receives a req and next", () => {
     const req: Pick<Request, "method" | "path"> = {
       method: "",

@@ -1,12 +1,12 @@
 import { type Request, type Response } from "express";
 import { generalError } from "../errorMiddleware";
-import type CustomError from "../../utils/CustomError";
+import type CustomError from "../../CustomError/CustomError";
 
 beforeAll(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a errorMiddleware method generalError", () => {
+describe("Given a errorMiddleware function generalError", () => {
   const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn().mockReturnThis(),
