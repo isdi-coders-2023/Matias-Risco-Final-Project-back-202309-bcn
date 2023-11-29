@@ -1,7 +1,6 @@
 import { type Response, type Request } from "express";
 import { type GameStructureApi } from "../types";
-import { gamesToApi } from "../utils/gamesTransformation.js";
-import gamesMock from "../mock/gamesMock.js";
+import type GamesRepository from "../repository/GamesRepository";
 
 export interface GamesJson {
   games: GameStructureApi[];
@@ -10,9 +9,12 @@ export interface GamesJson {
 export type GamesResponseBody = Response<GamesJson>;
 
 class GamesController {
-  getGames(_res: Request, res: GamesResponseBody) {
-    res.status(200).json({ games: gamesToApi(gamesMock) });
-  }
+  constructor(private readonly gamesRepository: GamesRepository) {}
+
+  getGames = async (_res: Request, res: GamesResponseBody) => {
+    const games = await this.gamesRepository.getGames();
+    res.status(200).json({ games });
+  };
 }
 
 export default GamesController;

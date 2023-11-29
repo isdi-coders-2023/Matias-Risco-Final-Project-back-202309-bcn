@@ -2,14 +2,17 @@ import MongoMemoryServer from "mongodb-memory-server-core";
 import debug from "debug";
 import { connectToDatabase } from "..";
 import mongoose from "mongoose";
+import { server } from "../../setUpTest";
 
 let logSpy: jest.SpyInstance<any, any[]>;
 
 beforeAll(async () => {
+  await mongoose.disconnect();
+  await server.stop();
   logSpy = jest.spyOn(debug, "log");
 });
 
-afterEach(() => {
+beforeEach(() => {
   logSpy.mockReset();
 });
 

@@ -14,5 +14,6 @@ app.use(morgan("dev"));
 
 app.get("/", pingRouter);
 app.use("/games", gamesRouter);
+
 app.use(endpointNotFound);
 app.use(generalError);

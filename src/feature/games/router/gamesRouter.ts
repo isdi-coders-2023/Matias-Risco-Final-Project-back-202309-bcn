@@ -1,8 +1,10 @@
 import { Router } from "express";
 import GamesController from "../controller/GamesController.js";
+import GamesRepository from "../repository/GamesRepository.js";
 
+const gamesRepository = new GamesRepository();
+const gamesController = new GamesController(gamesRepository);
 const gamesRouter = Router();
-const gamesController = new GamesController();
 
 gamesRouter.get("/", gamesController.getGames);
 
