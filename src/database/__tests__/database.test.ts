@@ -7,8 +7,6 @@ import { server } from "../../setUpTest";
 let logSpy: jest.SpyInstance<any, any[]>;
 
 beforeAll(async () => {
-  await server.stop();
-  await mongoose.disconnect();
   logSpy = jest.spyOn(debug, "log");
 });
 
@@ -23,13 +21,9 @@ afterAll(async () => {
 describe("Given the function connectToDatabase", () => {
   describe("When is given a mongosseDataBase Url as a param and call it", () => {
     test("Then it should call debug with 'Connected to database'", async () => {
-      const servertest = await MongoMemoryServer.create();
-      const mongoDbUrl = servertest.getUri();
       const expectedMessage = "Connected to database";
 
-      await connectToDatabase(mongoDbUrl);
-      await servertest.stop();
-      await mongoose.disconnect();
+      await connectToDatabase(server.getUri());
 
       expect(logSpy.mock.calls[0][0]).toEqual(
         expect.stringContaining(expectedMessage),
