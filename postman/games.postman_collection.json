@@ -1,0 +1,107 @@
+{
+  "info": {
+    "_postman_id": "808d8cfc-7d04-4123-bbd1-1cd3e6e30b24",
+    "name": "games",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30615512"
+  },
+  "item": [
+    {
+      "name": "dev",
+      "item": [
+        {
+          "name": "games",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3693/games",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3693",
+              "path": ["games"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ping",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3693/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3693",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "not Found",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3693/segfesgE",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3693",
+              "path": ["segfesgE"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prod",
+      "item": [
+        {
+          "name": "games",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ping",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "not Found",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/segfesgE",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["segfesgE"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
