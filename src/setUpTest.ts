@@ -9,8 +9,16 @@ import { gamesWithOutId } from "./feature/games/utils/gamesTransformation";
 
 export let server: MongoMemoryServer;
 
+const serverConection = async () => {
+  try {
+    server = await MongoMemoryServer.create();
+  } catch {
+    await serverConection();
+  }
+};
+
 beforeAll(async () => {
-  server = await MongoMemoryServer.create();
+  await serverConection();
   const mongoDbUrl = server.getUri();
   await connectToDatabase(mongoDbUrl);
   await Games.create(gamesWithOutId(gamesMock));
