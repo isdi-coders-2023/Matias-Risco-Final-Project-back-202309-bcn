@@ -5,4 +5,9 @@ module.exports = {
   testMatch: ["**/src/**/*.test.ts"],
   resolver: "jest-ts-webcompat-resolver",
   setupFilesAfterEnv: ["./src/setUpTest.ts"],
+  collectCoverageFrom: [
+    "**/*.{ts,tsx}",
+    "!**/node_modules/**",
+    "!**/src/index.ts",
+  ],
 };
