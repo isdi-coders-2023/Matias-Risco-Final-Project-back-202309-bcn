@@ -1,0 +1,130 @@
+{
+  "id": "f175c996-58f8-41b6-927b-8ccb0c5e038f",
+  "name": "games",
+  "timestamp": "2023-12-01T11:26:19.457Z",
+  "collection_id": "30615512-808d8cfc-7d04-4123-bbd1-1cd3e6e30b24",
+  "folder_id": 0,
+  "environment_id": "0",
+  "totalPass": 0,
+  "delay": 0,
+  "persist": true,
+  "status": "finished",
+  "startedAt": "2023-12-01T11:26:17.853Z",
+  "totalFail": 0,
+  "results": [
+    {
+      "id": "54fe142a-8b97-459c-a0a0-e16d356f7732",
+      "name": "games",
+      "url": "http://localhost:3693/games",
+      "time": 56,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [56],
+      "allTests": [{}]
+    },
+    {
+      "id": "557e6481-219b-4a1b-ac48-231069b07a33",
+      "name": "ping",
+      "url": "http://localhost:3693/",
+      "time": 9,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [9],
+      "allTests": [{}]
+    },
+    {
+      "id": "bd5ec8f6-6cd5-4a11-becf-04f51ad8bc52",
+      "name": "not Found",
+      "url": "http://localhost:3693/segfesgE",
+      "time": 6,
+      "responseCode": {
+        "code": 404,
+        "name": "Not Found"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [6],
+      "allTests": [{}]
+    },
+    {
+      "id": "5f1d93ce-1856-498c-827c-6c3e9b1bebc0",
+      "name": "games",
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/games",
+      "time": 98,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [98],
+      "allTests": [{}]
+    },
+    {
+      "id": "ac45e578-a498-4906-a586-3cb9094bc706",
+      "name": "ping",
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/",
+      "time": 90,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [90],
+      "allTests": [{}]
+    },
+    {
+      "id": "f77346a3-ae4b-4879-bf08-c33a7054cbbf",
+      "name": "not Found",
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/segfesgE",
+      "time": 89,
+      "responseCode": {
+        "code": 404,
+        "name": "Not Found"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [89],
+      "allTests": [{}]
+    }
+  ],
+  "count": 1,
+  "totalTime": 348,
+  "collection": {
+    "requests": [
+      {
+        "id": "54fe142a-8b97-459c-a0a0-e16d356f7732",
+        "method": "GET"
+      },
+      {
+        "id": "557e6481-219b-4a1b-ac48-231069b07a33",
+        "method": "GET"
+      },
+      {
+        "id": "bd5ec8f6-6cd5-4a11-becf-04f51ad8bc52",
+        "method": "GET"
+      },
+      {
+        "id": "5f1d93ce-1856-498c-827c-6c3e9b1bebc0",
+        "method": "GET"
+      },
+      {
+        "id": "ac45e578-a498-4906-a586-3cb9094bc706",
+        "method": "GET"
+      },
+      {
+        "id": "f77346a3-ae4b-4879-bf08-c33a7054cbbf",
+        "method": "GET"
+      }
+    ]
+  }
+}
