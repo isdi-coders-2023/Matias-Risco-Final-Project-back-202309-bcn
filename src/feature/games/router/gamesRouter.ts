@@ -7,5 +7,6 @@ const gamesController = new GamesController(gamesRepository);
 const gamesRouter = Router();
 
 gamesRouter.get("/", gamesController.getGames);
+gamesRouter.delete("/delete/:idGame", gamesController.deleteGame);
 
 export default gamesRouter;
