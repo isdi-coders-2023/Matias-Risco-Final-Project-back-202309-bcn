@@ -1,6 +1,6 @@
 import { type Request, type Response } from "express";
 import GamesController, { type GamesResponseBody } from "../GamesController";
-import { gamesToApi } from "../../utils/gamesTransformation";
+import { gameToApi, gamesToApi } from "../../utils/gamesTransformation";
 import gamesMock from "../../mock/gamesMock";
 import { type GamesRepositoryStructure } from "../../repository/types";
 
@@ -8,6 +8,14 @@ describe("Given the function getGames in GamesController", () => {
   describe("When it is call with a Response as a parameter", () => {
     const gamesRepository: GamesRepositoryStructure = {
       getGames: async () => gamesToApi(gamesMock),
+      async deleteGame(id: string) {
+        const game = gamesMock.find(({ _id }) => _id === id);
+        if (!game) {
+          throw new Error("document not found");
+        }
+
+        return gameToApi(game);
+      },
     };
     const gamesController = new GamesController(gamesRepository);
     const req = {};
