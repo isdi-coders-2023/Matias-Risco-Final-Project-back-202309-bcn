@@ -26,8 +26,7 @@ class GamesRepository implements GamesRepositoryStructure {
 
   async createGame(game: GameStructureWithOutId): Promise<GameStructureApi> {
     try {
-      const newGame = await Games.create(game);
-
+      const newGame = (await Games.create(game)).toJSON();
       return gameToApi(newGame);
     } catch (error) {
       throw new Error((error as Error).message);

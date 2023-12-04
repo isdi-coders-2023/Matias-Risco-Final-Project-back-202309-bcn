@@ -33,7 +33,7 @@ type GameTime =
 export interface GameStructure {
   _id: string;
   name: string;
-  plataforms: string[];
+  platforms: string[];
   difficulty: Difficulty;
   imageUrl: string;
   languages: string[];

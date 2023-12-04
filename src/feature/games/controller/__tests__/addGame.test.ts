@@ -5,6 +5,7 @@ import GamesController, {
   type GameAddResponse,
   type GameAddRequest,
 } from "../GamesController";
+import { newGame } from "../../mock/gamesMock";
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -20,19 +21,6 @@ describe("Given the function addGame in GamesController", () => {
   const gamesController = new GamesController(
     gamesRepository as GamesRepositoryStructure,
   );
-
-  const newGame: GameStructureWithOutId = {
-    name: "new game",
-    audience: [],
-    difficulty: "Dark Souls",
-    gameTime: "Average",
-    graphics: "Bad",
-    grind: "Average grind level",
-    imageUrl: "",
-    languages: [],
-    plataforms: [],
-    tags: [],
-  };
 
   const req: Partial<GameAddRequest> = {
     body: {

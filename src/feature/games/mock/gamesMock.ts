@@ -1,4 +1,4 @@
-import { type GameStructure } from "../types";
+import { type GameStructureWithOutId, type GameStructure } from "../types";
 
 const gamesMock: GameStructure[] = [
   {
@@ -10,7 +10,7 @@ const gamesMock: GameStructure[] = [
     grind: "You'll need a second life for grinding",
     languages: ["French"],
     imageUrl: "adsf",
-    plataforms: [],
+    platforms: [],
     name: "Archer melo",
     tags: [],
   },
@@ -23,10 +23,23 @@ const gamesMock: GameStructure[] = [
     grind: "Only if u care about leaderboards/ranks",
     languages: ["French"],
     imageUrl: "adsf",
-    plataforms: [],
+    platforms: [],
     name: "Jenga",
     tags: [],
   },
 ];
+
+export const newGame: GameStructureWithOutId = {
+  name: "new game",
+  audience: ["Adults"],
+  difficulty: "Dark Souls",
+  gameTime: "Average",
+  graphics: "Bad",
+  grind: "Average grind level",
+  imageUrl: "asd",
+  languages: ["Danish"],
+  platforms: ["Linux"],
+  tags: ["2D"],
+};
 
 export default gamesMock;

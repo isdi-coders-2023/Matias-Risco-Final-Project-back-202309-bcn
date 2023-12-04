@@ -13,7 +13,10 @@ describe("Given GET /games endpoint", () => {
       const jenga = expectData[1];
       const path = "/games";
 
-      const respond = await request(app).get(path).expect(expectCode);
+      const respond = await request(app)
+        .get(path)
+        .set("Accept", "application/json")
+        .expect(expectCode);
 
       const responseBody = respond.body as GamesJson;
 

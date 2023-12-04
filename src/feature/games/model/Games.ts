@@ -35,7 +35,7 @@ const GameShema = new mongoose.Schema<GameStructure>(
       type: [String],
       required: true,
     },
-    plataforms: {
+    platforms: {
       type: [String],
       required: true,
     },

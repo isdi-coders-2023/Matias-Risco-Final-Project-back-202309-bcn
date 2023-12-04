@@ -17,14 +17,18 @@ describe("Given the function getGames in GamesController", () => {
         return gameToApi(game);
       },
     };
+
     const gamesController = new GamesController(
       gamesRepository as GamesRepositoryStructure,
     );
+
     const req = {};
+
     const res: Pick<GamesResponseBody, "status" | "json"> = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn().mockReturnThis(),
     };
+
     test("then it should call status with Code 200", async () => {
       const expectCode = 200;
 

@@ -8,5 +8,6 @@ const gamesRouter = Router();
 
 gamesRouter.get("/", gamesController.getGames);
 gamesRouter.delete("/delete/:idGame", gamesController.deleteGame);
+gamesRouter.post("/add", gamesController.addGame);
 
 export default gamesRouter;
