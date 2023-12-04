@@ -8,7 +8,7 @@ import { newGame } from "../../mock/gamesMock";
 
 describe("Given POST /games/add/ endpoint", () => {
   describe("When it receives a request with the info of 'new game' with out id", () => {
-    test("Then it should respond with a status 200 and the information of 'new game' with id", async () => {
+    test.only("Then it should respond with a status 200 and the information of 'new game' with id", async () => {
       const expectCode = 200;
       const path = "/games/add";
 
