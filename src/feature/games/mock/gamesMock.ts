@@ -3,7 +3,7 @@ import { type GameStructureWithOutId, type GameStructure } from "../types";
 const gamesMock: GameStructure[] = [
   {
     _id: "AEWFGROUHGO4839oh8H9p8ppphP98H89fh398",
-    audience: ["young"],
+    audience: ["Adults"],
     difficulty: "Dark Souls",
     gameTime: "Average",
     graphics: "Decent",
@@ -16,7 +16,7 @@ const gamesMock: GameStructure[] = [
   },
   {
     _id: "gwoQA4HGO8349G",
-    audience: ["Granma"],
+    audience: ["Grandma"],
     difficulty: "Easy to learn / Hard to master",
     gameTime: "Average",
     graphics: "Decent",

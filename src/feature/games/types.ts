@@ -30,18 +30,74 @@ type GameTime =
   | "Long"
   | "To infinity and beyond";
 
+type Audience = "Kids" | "Teens" | "Adults" | "Grandma";
+
+type Languages =
+  | "English"
+  | "French"
+  | "German"
+  | "Russian"
+  | "Danish"
+  | "Dutch"
+  | "Finnish"
+  | "Italian"
+  | "Japanese"
+  | "Norwegian"
+  | "Polish"
+  | "Spanish";
+
+type Tag =
+  | "Indie"
+  | "Action"
+  | "Adventure"
+  | "Casual"
+  | "RPG"
+  | "Simulation"
+  | "Strategy"
+  | "Singleplayer"
+  | "Early Access"
+  | "Free to Play"
+  | "2D"
+  | "3D"
+  | "Atmospheric"
+  | "Fantasy"
+  | "Story Rich"
+  | "Colorful"
+  | "Multiplayer"
+  | "Puzzle"
+  | "Exploration"
+  | "Pixel Graphics"
+  | "Massively Multiplayer"
+  | "Cute"
+  | "Sports"
+  | "Violent"
+  | "First-Person"
+  | "Combat"
+  | "Racing"
+  | "Action-Adventure"
+  | "Anime"
+  | "Arcade"
+  | "Funny"
+  | "Sci-fi"
+  | "Shooter"
+  | "Relaxing"
+  | "Horror"
+  | "Gore";
+
+type Platforms = "VR" | "Windows" | "Linux" | "Mac";
+
 export interface GameStructure {
   _id: string;
   name: string;
-  platforms: string[];
+  platforms: Platforms[];
   difficulty: Difficulty;
   imageUrl: string;
-  languages: string[];
+  languages: Languages[];
   graphics: Graphics;
-  audience: string[];
+  audience: Audience[];
   grind: Grid;
   gameTime: GameTime;
-  tags: string[];
+  tags: Tag[];
 }
 
 export type GameStructureWithOutId = Omit<GameStructure, "_id">;
