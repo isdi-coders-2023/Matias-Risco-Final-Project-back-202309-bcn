@@ -13,6 +13,7 @@ class GamesRepository implements GamesRepositoryStructure {
   async deleteGame(id: string): Promise<GameStructureApi> {
     try {
       const game = await Games.findByIdAndDelete(id).lean();
+
       if (!game) {
         throw new Error("document not found");
       }
