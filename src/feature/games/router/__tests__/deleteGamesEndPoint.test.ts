@@ -16,7 +16,8 @@ describe("Given DELETE /games/delete endpoint", () => {
 
       const respond = await request(app).get(path);
       const { games } = respond.body as GamesJson;
-      const idArcherMelo = games[0].id;
+      const idArcherMelo = games.find((games) => archerMelo.name === games.name)
+        ?.id;
 
       const { game } = (
         await request(app)
