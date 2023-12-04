@@ -1,7 +1,7 @@
 import { type Response, type Request, type NextFunction } from "express";
 import { type GameStructureApi } from "../types";
 import { type GamesRepositoryStructure } from "../repository/types";
-import CustomError from "../../../server/CustomError/CustomError";
+import CustomError from "../../../server/CustomError/CustomError.js";
 
 export interface GamesJson {
   games: GameStructureApi[];
