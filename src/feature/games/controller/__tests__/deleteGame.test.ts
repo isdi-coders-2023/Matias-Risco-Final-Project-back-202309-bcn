@@ -2,7 +2,6 @@ import { type NextFunction, type Request } from "express";
 import GamesController, {
   type GameDeleteResponseParams,
   type GameDeleteRequestParams,
-  type GamesResponseBody,
 } from "../GamesController";
 import { gameToApi, gamesToApi } from "../../utils/gamesTransformation";
 import gamesMock from "../../mock/gamesMock";
@@ -28,6 +27,7 @@ describe("Given the function deleteGame in GamesController", () => {
     status: jest.fn().mockReturnThis(),
     json: jest.fn().mockReturnThis(),
   };
+
   const next: NextFunction = jest.fn();
 
   describe("When it is call with a Response and a Request with id of Archer melo Game as a parameter", () => {

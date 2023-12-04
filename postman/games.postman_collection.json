@@ -53,6 +53,43 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "game error delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3693/games/delete/2141512353",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3693",
+              "path": ["games", "delete", "2141512353"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3693/games/delete/656ab2e33eb96014d34e07dd",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3693",
+              "path": ["games", "delete", "656ab2e33eb96014d34e07dd"]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -97,6 +134,41 @@
               "protocol": "https",
               "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
               "path": ["segfesgE"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game error delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/2141512353",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games", "delete", "2141512353"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/656ab2e33eb96014d34e07dd",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games", "delete", "656ab2e33eb96014d34e07dd"]
             }
           },
           "response": []

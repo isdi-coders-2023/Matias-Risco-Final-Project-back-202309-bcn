@@ -30,7 +30,9 @@ class GamesController {
   ) => {
     try {
       const { idGame } = req.params;
+
       const game = await this.gamesRepository.deleteGame(idGame);
+
       res.status(200).json({ game });
     } catch (error) {
       const newError = new CustomError(
