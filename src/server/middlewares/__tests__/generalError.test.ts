@@ -1,6 +1,7 @@
 import { type Request, type Response } from "express";
 import { generalError } from "../errorMiddleware";
 import type CustomError from "../../CustomError/CustomError";
+import { ValidationError } from "express-validation";
 
 beforeAll(() => {
   jest.clearAllMocks();
@@ -41,6 +42,26 @@ describe("Given a errorMiddleware function generalError", () => {
       const expectStatus = 404;
 
       generalError(error as CustomError, req as Request, res as Response, next);
+
+      expect(res.status).toHaveBeenCalledWith(expectStatus);
+      expect(res.json).toHaveBeenCalledWith(expectMessage);
+    });
+  });
+
+  describe("When it receives a ValidationError with status code 400 and message 'Validation Failed'", () => {
+    test("Then it should call the res's method status with 404 and json with { message: 'Validation Failed'}", () => {
+      const validationError = new ValidationError(
+        { body: [] },
+        {
+          statusCode: 404,
+          message: "Validation Failed",
+        },
+      );
+
+      const expectMessage = { message: "Validation Failed" };
+      const expectStatus = 404;
+
+      generalError(validationError, req as Request, res as Response, next);
 
       expect(res.status).toHaveBeenCalledWith(expectStatus);
       expect(res.json).toHaveBeenCalledWith(expectMessage);

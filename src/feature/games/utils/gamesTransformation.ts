@@ -13,11 +13,6 @@ export const gamesWithOutId = (
   games: GameStructure[],
 ): GameStructureWithOutId[] => games.map((game) => gameWithOutId(game));
 
-export const gameAddId = (
-  id: string,
-  game: GameStructureWithOutId,
-): GameStructureApi => ({ id, ...game });
-
 export const gameToApi = ({
   _id: id,
   ...gameBase

@@ -17,12 +17,9 @@ export const generalError = (
   _next: NextFunction,
 ) => {
   if (error instanceof ValidationError) {
-    error.privateMessage =
-      error.details.body?.reduce(
-        (accumulator, { message }, pocition) =>
-          pocition === 0 ? `${message}` : `${accumulator} \n ${message}`,
-        "",
-      ) ?? "";
+    error.privateMessage = `${error.details.body
+      ?.map(({ message }) => message)
+      .join("\n")}`;
   }
 
   const publicMessage = error?.message ?? "Error untracked in Api";
