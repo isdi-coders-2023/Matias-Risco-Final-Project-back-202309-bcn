@@ -27,4 +27,5 @@ beforeAll(async () => {
 afterAll(async () => {
   await mongoose.disconnect();
   await server.stop();
+  jest.clearAllMocks();
 });
