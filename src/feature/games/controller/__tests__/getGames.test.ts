@@ -6,7 +6,7 @@ import { type GamesRepositoryStructure } from "../../repository/types";
 
 describe("Given the function getGames in GamesController", () => {
   describe("When it is call with a Response as a parameter", () => {
-    const gamesRepository: GamesRepositoryStructure = {
+    const gamesRepository: Partial<GamesRepositoryStructure> = {
       getGames: async () => gamesToApi(gamesMock),
       async deleteGame(id: string) {
         const game = gamesMock.find(({ _id }) => _id === id);
@@ -17,12 +17,18 @@ describe("Given the function getGames in GamesController", () => {
         return gameToApi(game);
       },
     };
-    const gamesController = new GamesController(gamesRepository);
+
+    const gamesController = new GamesController(
+      gamesRepository as GamesRepositoryStructure,
+    );
+
     const req = {};
+
     const res: Pick<GamesResponseBody, "status" | "json"> = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn().mockReturnThis(),
     };
+
     test("then it should call status with Code 200", async () => {
       const expectCode = 200;
 

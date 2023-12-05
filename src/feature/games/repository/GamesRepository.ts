@@ -1,4 +1,4 @@
-import { type GameStructureApi } from "../types";
+import { type GameStructureWithOutId, type GameStructureApi } from "../types";
 import { type GamesRepositoryStructure } from "./types";
 import { gameToApi, gamesToApi } from "../utils/gamesTransformation.js";
 import Games from "../model/Games.js";
@@ -19,6 +19,15 @@ class GamesRepository implements GamesRepositoryStructure {
       }
 
       return gameToApi(game);
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  }
+
+  async createGame(game: GameStructureWithOutId): Promise<GameStructureApi> {
+    try {
+      const newGame = (await Games.create(game)).toJSON();
+      return gameToApi(newGame);
     } catch (error) {
       throw new Error((error as Error).message);
     }

@@ -9,7 +9,7 @@ import { type GamesRepositoryStructure } from "../../repository/types";
 import type CustomError from "../../../../server/CustomError/CustomError";
 
 describe("Given the function deleteGame in GamesController", () => {
-  const gamesRepository: GamesRepositoryStructure = {
+  const gamesRepository: Partial<GamesRepositoryStructure> = {
     getGames: async () => gamesToApi(gamesMock),
     async deleteGame(id: string) {
       const game = gamesMock.find(({ _id }) => _id === id);
@@ -20,7 +20,10 @@ describe("Given the function deleteGame in GamesController", () => {
       return gameToApi(game);
     },
   };
-  const gamesController = new GamesController(gamesRepository);
+
+  const gamesController = new GamesController(
+    gamesRepository as GamesRepositoryStructure,
+  );
   const archerMelo = gamesMock[0];
 
   const res: Pick<GameDeleteResponseParams, "status" | "json"> = {

@@ -6,6 +6,7 @@ const debug = debugCreator("valvePipe:server");
 const app = express();
 
 app.disable("x-powered-by");
+app.use(express.json());
 
 export const startServer = (port: number) =>
   app.listen(port, () => {
