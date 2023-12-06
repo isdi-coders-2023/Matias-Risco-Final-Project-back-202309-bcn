@@ -17,13 +17,13 @@ export const graphics = [
   "MS-DOS",
 ] as const;
 
-export const grid = [
+export const grind = [
   "Nothing to grind",
-  "Only if u care about leaderboards/ranks",
+  "Only if u care about leaderboards",
   "Isn't necessary to progress",
   "Average grind level",
   "Too much grind",
-  "You'll need a second life for grinding",
+  "You'll need a second life",
 ] as const;
 
 export const gameTime = [
@@ -97,7 +97,7 @@ type Tag = (typeof tag)[number];
 type Languages = (typeof languages)[number];
 type Audience = (typeof audience)[number];
 type GameTime = (typeof gameTime)[number];
-type Grid = (typeof grid)[number];
+type Grind = (typeof grind)[number];
 type Graphics = (typeof graphics)[number];
 type Difficulty = (typeof difficulty)[number];
 
@@ -110,7 +110,7 @@ export interface GameStructure {
   languages: Languages[];
   graphics: Graphics;
   audience: Audience[];
-  grind: Grid;
+  grind: Grind;
   gameTime: GameTime;
   tags: Tag[];
 }

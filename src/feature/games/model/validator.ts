@@ -6,7 +6,7 @@ import {
   difficulty,
   gameTime,
   graphics,
-  grid,
+  grind,
   languages,
   platforms,
 } from "../types.js";
@@ -31,7 +31,7 @@ export const addGameValidator = {
         .valid(...graphics)
         .required(),
       grind: Joi.string()
-        .valid(...grid)
+        .valid(...grind)
         .required(),
       imageUrl: Joi.string().required(),
       languages: Joi.array()
