@@ -7,11 +7,11 @@ export interface GamesJson {
   games: GameStructureApi[];
 }
 
-export type GameDeleteRequestParams = Request<{
+export type GameIdRequestParams = Request<{
   idGame: string;
 }>;
 
-export type GameDeleteResponseParams = Response<{ game: GameStructureApi }>;
+export type GameBodyResponseParams = Response<{ game: GameStructureApi }>;
 
 export type GamesResponseBody = Response<GamesJson>;
 
@@ -23,8 +23,6 @@ export type GameAddRequest = Request<
   }
 >;
 
-export type GameAddResponse = Response<{ game: GameStructureApi }>;
-
 class GamesController {
   constructor(private readonly gamesRepository: GamesRepositoryStructure) {}
 
@@ -34,8 +32,8 @@ class GamesController {
   };
 
   deleteGame = async (
-    req: GameDeleteRequestParams,
-    res: GameDeleteResponseParams,
+    req: GameIdRequestParams,
+    res: GameBodyResponseParams,
     next: NextFunction,
   ) => {
     try {
@@ -57,7 +55,7 @@ class GamesController {
 
   addGame = async (
     req: GameAddRequest,
-    res: GameAddResponse,
+    res: GameBodyResponseParams,
     next: NextFunction,
   ) => {
     try {
@@ -69,6 +67,28 @@ class GamesController {
       const newError = new CustomError(
         409,
         "Error in add new game",
+        (error as Error).message,
+      );
+
+      next(newError);
+    }
+  };
+
+  infoGame = async (
+    req: GameIdRequestParams,
+    res: GameBodyResponseParams,
+    next: NextFunction,
+  ) => {
+    try {
+      const { idGame } = req.params;
+
+      const game = await this.gamesRepository.infoGame!(idGame);
+
+      res.status(200).json({ game });
+    } catch (error) {
+      const newError = new CustomError(
+        404,
+        "Game not found",
         (error as Error).message,
       );
 

@@ -1,7 +1,7 @@
 import { type NextFunction, type Request } from "express";
 import GamesController, {
-  type GameDeleteResponseParams,
-  type GameDeleteRequestParams,
+  type GameBodyResponseParams,
+  type GameIdRequestParams,
 } from "../GamesController";
 import { gameToApi, gamesToApi } from "../../utils/gamesTransformation";
 import gamesMock from "../../mock/gamesMock";
@@ -26,7 +26,7 @@ describe("Given the function deleteGame in GamesController", () => {
   );
   const archerMelo = gamesMock[0];
 
-  const res: Pick<GameDeleteResponseParams, "status" | "json"> = {
+  const res: Pick<GameBodyResponseParams, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn().mockReturnThis(),
   };
@@ -34,7 +34,7 @@ describe("Given the function deleteGame in GamesController", () => {
   const next: NextFunction = jest.fn();
 
   describe("When it is call with a Response and a Request with id of Archer melo Game as a parameter", () => {
-    const req: Pick<GameDeleteRequestParams, "params"> = {
+    const req: Pick<GameIdRequestParams, "params"> = {
       params: {
         idGame: archerMelo._id,
       },
@@ -44,8 +44,8 @@ describe("Given the function deleteGame in GamesController", () => {
       const expectCode = 200;
 
       await gamesController.deleteGame(
-        req as GameDeleteRequestParams,
-        res as GameDeleteResponseParams,
+        req as GameIdRequestParams,
+        res as GameBodyResponseParams,
         next,
       );
 
@@ -58,8 +58,8 @@ describe("Given the function deleteGame in GamesController", () => {
       };
 
       await gamesController.deleteGame(
-        req as GameDeleteRequestParams,
-        res as GameDeleteResponseParams,
+        req as GameIdRequestParams,
+        res as GameBodyResponseParams,
         next,
       );
 
@@ -69,7 +69,7 @@ describe("Given the function deleteGame in GamesController", () => {
 
   describe("When it is call with a Response and a Request with non existing id Game as a parameter", () => {
     test("then it should call next with  404 Document not found", async () => {
-      const req: Pick<GameDeleteRequestParams, "params"> = {
+      const req: Pick<GameIdRequestParams, "params"> = {
         params: {
           idGame: "0000000000000000",
         },
@@ -81,8 +81,8 @@ describe("Given the function deleteGame in GamesController", () => {
       };
 
       await gamesController.deleteGame(
-        req as GameDeleteRequestParams,
-        res as GameDeleteResponseParams,
+        req as GameIdRequestParams,
+        res as GameBodyResponseParams,
         next,
       );
 
