@@ -32,6 +32,20 @@ class GamesRepository implements GamesRepositoryStructure {
       throw new Error((error as Error).message);
     }
   }
+
+  async infoGame(id: string): Promise<GameStructureApi> {
+    try {
+      const game = await Games.findById(id).lean();
+
+      if (!game) {
+        throw new Error("document not found");
+      }
+
+      return gameToApi(game);
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  }
 }
 
 export default GamesRepository;

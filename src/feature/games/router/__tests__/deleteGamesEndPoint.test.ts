@@ -1,7 +1,7 @@
 import app from "../../../../server/app";
 import { type GamesJson } from "../../controller/GamesController";
 import gamesMock from "../../mock/gamesMock";
-import { type GameStructureApi, type GameStructure } from "../../types";
+import { type GameStructureApi } from "../../types";
 import { gamesWithOutId } from "../../utils/gamesTransformation";
 import request from "supertest";
 
