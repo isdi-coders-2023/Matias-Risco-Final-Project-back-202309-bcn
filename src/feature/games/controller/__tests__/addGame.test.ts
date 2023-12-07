@@ -2,7 +2,7 @@ import { type NextFunction } from "express";
 import { type GamesRepositoryStructure } from "../../repository/types";
 import { type GameStructure, type GameStructureWithOutId } from "../../types";
 import GamesController, {
-  type GameAddResponse,
+  type GameBodyResponseParams,
   type GameAddRequest,
 } from "../GamesController";
 import { newGame } from "../../mock/gamesMock";
@@ -28,7 +28,7 @@ describe("Given the function addGame in GamesController", () => {
     },
   };
 
-  const res: Partial<GameAddResponse> = {
+  const res: Partial<GameBodyResponseParams> = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn().mockReturnThis(),
   };
@@ -41,7 +41,7 @@ describe("Given the function addGame in GamesController", () => {
 
       await gamesController.addGame(
         req as GameAddRequest,
-        res as GameAddResponse,
+        res as GameBodyResponseParams,
         next,
       );
 
@@ -55,7 +55,7 @@ describe("Given the function addGame in GamesController", () => {
 
       await gamesController.addGame(
         req as GameAddRequest,
-        res as GameAddResponse,
+        res as GameBodyResponseParams,
         next,
       );
 
