@@ -1,9 +1,6 @@
 import request from "supertest";
 import app from "../../../../server/app";
-import {
-  type GameStructureApi,
-  type GameStructureWithOutId,
-} from "../../types";
+import { type GameStructureApi } from "../../types";
 import { newGame } from "../../mock/gamesMock";
 import mongoose from "mongoose";
 
