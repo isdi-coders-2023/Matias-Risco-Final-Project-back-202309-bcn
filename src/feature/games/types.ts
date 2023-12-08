@@ -120,3 +120,8 @@ export type GameStructureWithOutId = Omit<GameStructure, "_id">;
 export interface GameStructureApi extends GameStructureWithOutId {
   id: string;
 }
+
+export interface GamePartialStructureApi
+  extends Partial<GameStructureWithOutId> {
+  id: string;
+}
