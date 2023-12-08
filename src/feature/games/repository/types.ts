@@ -9,5 +9,5 @@ export interface GamesRepositoryStructure {
   deleteGame: (id: string) => Promise<GameStructureApi>;
   createGame: (game: GameStructureWithOutId) => Promise<GameStructureApi>;
   infoGame: (id: string) => Promise<GameStructureApi>;
-  editGame?: (game: GamePartialStructureApi) => Promise<GameStructureApi>;
+  editGame: (game: GamePartialStructureApi) => Promise<GameStructureApi>;
 }

@@ -1,5 +1,5 @@
 import app from "../../../../server/app";
-import { type GamesJson } from "../../controller/GamesController";
+import { type GamesJson } from "../../controller/types";
 import gamesMock from "../../mock/gamesMock";
 import { gamesWithOutId } from "../../utils/gamesTransformation";
 import request from "supertest";

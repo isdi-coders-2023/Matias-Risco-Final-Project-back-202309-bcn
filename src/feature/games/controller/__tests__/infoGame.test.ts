@@ -1,14 +1,15 @@
 import { type NextFunction } from "express";
 import { type GamesRepositoryStructure } from "../../repository/types";
 import { type GameStructure, type GameStructureWithOutId } from "../../types";
-import GamesController, {
+import {
   type GameBodyResponseParams,
   type GameAddRequest,
   type GameIdRequestParams,
-} from "../GamesController";
+} from "../types";
 import gamesMock, { newGame } from "../../mock/gamesMock";
 import { gameToApi, gameWithOutId } from "../../utils/gamesTransformation";
 import type CustomError from "../../../../server/CustomError/CustomError";
+import GamesController from "../GamesController";
 
 afterEach(() => {
   jest.clearAllMocks();

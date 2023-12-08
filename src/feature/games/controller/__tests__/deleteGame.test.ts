@@ -1,12 +1,13 @@
 import { type NextFunction, type Request } from "express";
-import GamesController, {
+import {
   type GameBodyResponseParams,
   type GameIdRequestParams,
-} from "../GamesController";
+} from "../types";
 import { gameToApi, gamesToApi } from "../../utils/gamesTransformation";
 import gamesMock from "../../mock/gamesMock";
 import { type GamesRepositoryStructure } from "../../repository/types";
 import type CustomError from "../../../../server/CustomError/CustomError";
+import GamesController from "../GamesController";
 
 describe("Given the function deleteGame in GamesController", () => {
   const gamesRepository: Partial<GamesRepositoryStructure> = {
