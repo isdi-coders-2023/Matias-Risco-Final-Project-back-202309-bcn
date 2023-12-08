@@ -5,14 +5,12 @@ import {
   type GameStructureApi,
   type GameStructure,
 } from "../../types";
-import GamesController, {
-  type GameBodyResponseParams,
-  type GameEditRequest,
-} from "../GamesController";
+import { type GameBodyResponseParams, type GameEditRequest } from "../types";
 import gamesMock, { newGame } from "../../mock/gamesMock";
 import { copyGameApi } from "../../utils/gamesCopy";
 import { gamesToApi } from "../../utils/gamesTransformation";
 import type CustomError from "../../../../server/CustomError/CustomError";
+import GamesController from "../GamesController";
 
 afterEach(() => {
   jest.clearAllMocks();

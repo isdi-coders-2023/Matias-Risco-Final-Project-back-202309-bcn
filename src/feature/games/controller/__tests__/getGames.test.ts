@@ -1,8 +1,9 @@
 import { type Request, type Response } from "express";
-import GamesController, { type GamesResponseBody } from "../GamesController";
+import { type GamesResponseBody } from "../types";
 import { gameToApi, gamesToApi } from "../../utils/gamesTransformation";
 import gamesMock from "../../mock/gamesMock";
 import { type GamesRepositoryStructure } from "../../repository/types";
+import GamesController from "../GamesController";
 
 describe("Given the function getGames in GamesController", () => {
   describe("When it is call with a Response as a parameter", () => {

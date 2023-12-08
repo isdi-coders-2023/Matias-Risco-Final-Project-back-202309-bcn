@@ -1,39 +1,13 @@
-import { type Response, type Request, type NextFunction } from "express";
-import {
-  type GameStructureWithOutId,
-  type GameStructureApi,
-  type GamePartialStructureApi,
-} from "../types";
+import { type Request, type NextFunction } from "express";
 import { type GamesRepositoryStructure } from "../repository/types";
+import {
+  type GameEditRequest,
+  type GameAddRequest,
+  type GameBodyResponseParams,
+  type GameIdRequestParams,
+  type GamesResponseBody,
+} from "./types";
 import CustomError from "../../../server/CustomError/CustomError.js";
-
-export interface GamesJson {
-  games: GameStructureApi[];
-}
-
-export type GameIdRequestParams = Request<{
-  idGame: string;
-}>;
-
-export type GameBodyResponseParams = Response<{ game: GameStructureApi }>;
-
-export type GamesResponseBody = Response<GamesJson>;
-
-export type GameAddRequest = Request<
-  Record<string, unknown>,
-  Record<string, unknown>,
-  {
-    game: GameStructureWithOutId;
-  }
->;
-
-export type GameEditRequest = Request<
-  Record<string, unknown>,
-  Record<string, unknown>,
-  {
-    game: GamePartialStructureApi;
-  }
->;
 
 class GamesController {
   constructor(private readonly gamesRepository: GamesRepositoryStructure) {}

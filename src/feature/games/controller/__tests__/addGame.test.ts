@@ -1,11 +1,9 @@
 import { type NextFunction } from "express";
 import { type GamesRepositoryStructure } from "../../repository/types";
 import { type GameStructure, type GameStructureWithOutId } from "../../types";
-import GamesController, {
-  type GameBodyResponseParams,
-  type GameAddRequest,
-} from "../GamesController";
+import { type GameBodyResponseParams, type GameAddRequest } from "../types";
 import { newGame } from "../../mock/gamesMock";
+import GamesController from "../GamesController";
 
 afterEach(() => {
   jest.clearAllMocks();
