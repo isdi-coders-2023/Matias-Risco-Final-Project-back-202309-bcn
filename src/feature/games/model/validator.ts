@@ -9,6 +9,7 @@ import {
   grind,
   languages,
   platforms,
+  type GameStructureApi,
 } from "../types.js";
 
 export const addGameValidator = {
@@ -40,6 +41,50 @@ export const addGameValidator = {
       platforms: Joi.array()
         .items(Joi.string().valid(...platforms))
         .required(),
+    }),
+  }),
+};
+
+export const editGameValidator = {
+  body: Joi.object<{ game: GameStructureApi }>().keys({
+    game: Joi.object<GameStructureApi>().keys({
+      id: Joi.string().required(),
+
+      name: Joi.string().optional(),
+
+      tags: Joi.array()
+        .items(Joi.string().valid(...tag))
+        .optional(),
+
+      audience: Joi.array()
+        .items(Joi.string().valid(...audience))
+        .optional(),
+
+      difficulty: Joi.string()
+        .valid(...difficulty)
+        .optional(),
+
+      gameTime: Joi.string()
+        .valid(...gameTime)
+        .optional(),
+
+      graphics: Joi.string()
+        .valid(...graphics)
+        .optional(),
+
+      grind: Joi.string()
+        .valid(...grind)
+        .optional(),
+
+      imageUrl: Joi.string().required().optional(),
+
+      languages: Joi.array()
+        .items(Joi.string().valid(...languages))
+        .optional(),
+
+      platforms: Joi.array()
+        .items(Joi.string().valid(...platforms))
+        .optional(),
     }),
   }),
 };

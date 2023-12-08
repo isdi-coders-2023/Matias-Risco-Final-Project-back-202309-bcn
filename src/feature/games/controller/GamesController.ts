@@ -90,7 +90,7 @@ class GamesController {
     try {
       const { game } = req.body;
 
-      const editedGame = await this.gamesRepository.editGame!(game);
+      const editedGame = await this.gamesRepository.editGame(game);
 
       res.status(200).json({ game: editedGame });
     } catch (error) {
