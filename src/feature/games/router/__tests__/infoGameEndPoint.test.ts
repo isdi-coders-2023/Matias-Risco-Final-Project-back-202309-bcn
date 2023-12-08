@@ -1,8 +1,6 @@
 import request from "supertest";
 import app from "../../../../server/app";
 import { type GameStructureApi } from "../../types";
-import { newGame } from "../../mock/gamesMock";
-import mongoose from "mongoose";
 
 describe("Given get /games/info/ endpoint", () => {
   describe("When it receives a request with the info  with id of 'Archer melo'", () => {

@@ -1,5 +1,9 @@
 import { type Response, type Request, type NextFunction } from "express";
-import { type GameStructureWithOutId, type GameStructureApi } from "../types";
+import {
+  type GameStructureWithOutId,
+  type GameStructureApi,
+  type GamePartialStructureApi,
+} from "../types";
 import { type GamesRepositoryStructure } from "../repository/types";
 import CustomError from "../../../server/CustomError/CustomError.js";
 
@@ -20,6 +24,14 @@ export type GameAddRequest = Request<
   Record<string, unknown>,
   {
     game: GameStructureWithOutId;
+  }
+>;
+
+export type GameEditRequest = Request<
+  Record<string, unknown>,
+  Record<string, unknown>,
+  {
+    game: GamePartialStructureApi;
   }
 >;
 
@@ -82,13 +94,35 @@ class GamesController {
     try {
       const { idGame } = req.params;
 
-      const game = await this.gamesRepository.infoGame!(idGame);
+      const game = await this.gamesRepository.infoGame(idGame);
 
       res.status(200).json({ game });
     } catch (error) {
       const newError = new CustomError(
         404,
         "Game not found",
+        (error as Error).message,
+      );
+
+      next(newError);
+    }
+  };
+
+  editGame = async (
+    req: GameEditRequest,
+    res: GameBodyResponseParams,
+    next: NextFunction,
+  ) => {
+    try {
+      const { game } = req.body;
+
+      const editedGame = await this.gamesRepository.editGame!(game);
+
+      res.status(200).json({ game: editedGame });
+    } catch (error) {
+      const newError = new CustomError(
+        409,
+        "Game not found or edited",
         (error as Error).message,
       );
 
