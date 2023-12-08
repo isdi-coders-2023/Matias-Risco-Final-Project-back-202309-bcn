@@ -61,10 +61,10 @@ describe("Given PATCH /games/edit/ endpoint", () => {
 
   describe("When it receives a request with  the info updated with the id of 'Archer melo' but there is a problem with the database", () => {
     test("Then it should respond with a status 409 and the message 'Game not found or edited'", async () => {
-      await mongoose.disconnect();
       const message = "Game not found or edited";
       const expectCode = 409;
       const path = "/games/edit";
+      sendGame.id = "656cf0f9d92a000000000000";
 
       const response = await request(app)
         .patch(path)
