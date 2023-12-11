@@ -11,14 +11,23 @@
       "item": [
         {
           "name": "games",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3693/games",
+              "raw": "http://localhost:3709/games",
               "protocol": "http",
               "host": ["localhost"],
-              "port": "3693",
+              "port": "3709",
               "path": ["games"]
             }
           },
@@ -30,10 +39,10 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3693/",
+              "raw": "http://localhost:3709/",
               "protocol": "http",
               "host": ["localhost"],
-              "port": "3693",
+              "port": "3709",
               "path": [""]
             }
           },
@@ -45,10 +54,10 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3693/segfesgE",
+              "raw": "http://localhost:3709/segfesgE",
               "protocol": "http",
               "host": ["localhost"],
-              "port": "3693",
+              "port": "3709",
               "path": ["segfesgE"]
             }
           },
@@ -60,10 +69,10 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3693/games/delete/2141512353",
+              "raw": "http://localhost:3709/games/delete/2141512353",
               "protocol": "http",
               "host": ["localhost"],
-              "port": "3693",
+              "port": "3709",
               "path": ["games", "delete", "2141512353"]
             }
           },
@@ -82,11 +91,95 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:3693/games/delete/656ab2e33eb96014d34e07dd",
+              "raw": "http://localhost:3709/games/delete/6575e6b183bdd1a39944c2bf",
               "protocol": "http",
               "host": ["localhost"],
-              "port": "3693",
-              "path": ["games", "delete", "656ab2e33eb96014d34e07dd"]
+              "port": "3709",
+              "path": ["games", "delete", "6575e6b183bdd1a39944c2bf"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game edit",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"game\":{\r\n    \"id\":\"6575e41683bdd1a39944c2b9\",\r\n    \"graphics\":\"Beautiful\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3709/games/edit",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3709",
+              "path": ["games", "edit"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game add",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"audience\":[\r\n    \"Adults\",\r\n    \"Teens\"\r\n  ],\r\n  \"difficulty\":\"Dark Souls\",\r\n  \"gameTime\":\"Long enough for a cup of coffee\",\r\n  \"graphics\":\"Don't look too long at it\",\r\n  \"grind\":\"Only if u care about leaderboards\",\r\n  \"imageUrl\":\"https://i.ibb.co/PWKB6yW/ULTRAKILL.jpg\",\r\n  \"languages\":[\r\n    \"Danish\",\r\n    \"English\",\r\n    \"Russian\",\r\n    \"Spanish\"\r\n  ],\r\n  \"name\":\"Ultrakill\",\r\n  \"platforms\":[\r\n    \"Windows\",\r\n    \"VR\"\r\n  ],\r\n  \"tags\":[\r\n    \"3D\",\r\n    \"Action\",\r\n    \"Gore\",\r\n    \"Shooter\"\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3709/games/add",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3709",
+              "path": ["games", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3709/games/info/6575e35f83bdd1a39944c2b7",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3709",
+              "path": ["games", "info", "6575e35f83bdd1a39944c2b7"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "games page 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3709/games?page=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3709",
+              "path": ["games"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
             }
           },
           "response": []
@@ -165,10 +258,90 @@
               }
             ],
             "url": {
-              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/656ab2e33eb96014d34e07dd",
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/6576064af59ec6081437c679",
               "protocol": "https",
               "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
-              "path": ["games", "delete", "656ab2e33eb96014d34e07dd"]
+              "path": ["games", "delete", "6576064af59ec6081437c679"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game edit",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"game\":{\r\n    \"id\":\"656ab3423eb96014d34e07de\",\r\n    \"graphics\":\"Beautiful\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/edit",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games", "edit"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game add",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"audience\":[\r\n    \"Adults\",\r\n    \"Teens\"\r\n  ],\r\n  \"difficulty\":\"Dark Souls\",\r\n  \"gameTime\":\"Long enough for a cup of coffee\",\r\n  \"graphics\":\"Don't look too long at it\",\r\n  \"grind\":\"Only if u care about leaderboards\",\r\n  \"imageUrl\":\"https://i.ibb.co/PWKB6yW/ULTRAKILL.jpg\",\r\n  \"languages\":[\r\n    \"Danish\",\r\n    \"English\",\r\n    \"Russian\",\r\n    \"Spanish\"\r\n  ],\r\n  \"name\":\"Ultrakill\",\r\n  \"platforms\":[\r\n    \"Windows\",\r\n    \"VR\"\r\n  ],\r\n  \"tags\":[\r\n    \"3D\",\r\n    \"Action\",\r\n    \"Gore\",\r\n    \"Shooter\"\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/add",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "game info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/info/6575e35f83bdd1a39944c2b7",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games", "info", "6575e35f83bdd1a39944c2b7"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "games page 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games?page=1",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
             }
           },
           "response": []
