@@ -17,5 +17,6 @@ gamesRouter.patch(
   validate(editGameValidator),
   gamesController.editGame,
 );
+gamesRouter.get("/count", gamesController.countGame);
 
 export default gamesRouter;

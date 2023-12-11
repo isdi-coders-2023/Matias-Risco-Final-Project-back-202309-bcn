@@ -74,6 +74,16 @@ class GamesRepository implements GamesRepositoryStructure {
       throw new Error((error as Error).message);
     }
   }
+
+  async countGame(): Promise<number> {
+    try {
+      const number = await Games.countDocuments().lean();
+
+      return number;
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  }
 }
 
 export default GamesRepository;
