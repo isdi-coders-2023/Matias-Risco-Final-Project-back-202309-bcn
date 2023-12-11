@@ -5,6 +5,10 @@ import {
   type GamePartialStructureApi,
 } from "../types";
 
+export interface RequestQuery {
+  page?: string;
+}
+
 export interface GamesJson {
   games: GameStructureApi[];
 }
