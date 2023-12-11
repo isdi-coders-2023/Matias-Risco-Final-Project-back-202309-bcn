@@ -91,11 +91,11 @@
               }
             ],
             "url": {
-              "raw": "http://localhost:3709/games/delete/6575e6b183bdd1a39944c2bf",
+              "raw": "http://localhost:3709/games/delete/6576058ef59ec6081437c677",
               "protocol": "http",
               "host": ["localhost"],
               "port": "3709",
-              "path": ["games", "delete", "6575e6b183bdd1a39944c2bf"]
+              "path": ["games", "delete", "6576058ef59ec6081437c677"]
             }
           },
           "response": []
@@ -107,7 +107,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"game\":{\r\n    \"id\":\"6575e41683bdd1a39944c2b9\",\r\n    \"graphics\":\"Beautiful\"\r\n    }\r\n}",
+              "raw": "{\r\n    \"game\":{\r\n    \"id\":\"6575e35f83bdd1a39944c2b7\",\r\n    \"graphics\":\"Beautiful\"\r\n    }\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -154,11 +154,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3709/games/info/6575e35f83bdd1a39944c2b7",
+              "raw": "http://localhost:3709/games/info/65760498f59ec6081437c675",
               "protocol": "http",
               "host": ["localhost"],
               "port": "3709",
-              "path": ["games", "info", "6575e35f83bdd1a39944c2b7"]
+              "path": ["games", "info", "65760498f59ec6081437c675"]
             }
           },
           "response": []
@@ -180,6 +180,21 @@
                   "value": "1"
                 }
               ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "games count",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3709/games/count",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3709",
+              "path": ["games", "count"]
             }
           },
           "response": []
@@ -258,10 +273,10 @@
               }
             ],
             "url": {
-              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/6576064af59ec6081437c679",
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/6575e4e283bdd1a39944c2bb",
               "protocol": "https",
               "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
-              "path": ["games", "delete", "6576064af59ec6081437c679"]
+              "path": ["games", "delete", "6575e4e283bdd1a39944c2bb"]
             }
           },
           "response": []
@@ -273,7 +288,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"game\":{\r\n    \"id\":\"656ab3423eb96014d34e07de\",\r\n    \"graphics\":\"Beautiful\"\r\n    }\r\n}",
+              "raw": "{\r\n    \"game\":{\r\n    \"id\":\"6575e35f83bdd1a39944c2b7\",\r\n    \"graphics\":\"Beautiful\"\r\n    }\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -318,10 +333,10 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/info/6575e35f83bdd1a39944c2b7",
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/info/65760498f59ec6081437c675",
               "protocol": "https",
               "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
-              "path": ["games", "info", "6575e35f83bdd1a39944c2b7"]
+              "path": ["games", "info", "65760498f59ec6081437c675"]
             }
           },
           "response": []
@@ -342,6 +357,20 @@
                   "value": "1"
                 }
               ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "games count",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://matias-risco-202309-bcn-back.onrender.com/games/count",
+              "protocol": "https",
+              "host": ["matias-risco-202309-bcn-back", "onrender", "com"],
+              "path": ["games", "count"]
             }
           },
           "response": []

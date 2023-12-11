@@ -1,4 +1,4 @@
-import { type Request, type NextFunction } from "express";
+import { type Request, type NextFunction, type Response } from "express";
 import { type GamesRepositoryStructure } from "../repository/types";
 import {
   type GameEditRequest,
@@ -104,6 +104,26 @@ class GamesController {
       );
 
       next(newError);
+    }
+  };
+
+  countGame = async (
+    _req: Request,
+    res: Response<{ numberGames: number }>,
+    next: NextFunction,
+  ) => {
+    try {
+      const numberGames = await this.gamesRepository.countGame!();
+
+      res.status(200).json({ numberGames });
+    } catch (error) {
+      const errors = new CustomError(
+        400,
+        "Error problem in asking the number of games",
+        (error as Error).message,
+      );
+
+      next(errors);
     }
   };
 }
