@@ -1,7 +1,7 @@
 {
-  "id": "cbd4cb19-9830-42ff-9779-71fd6eee0e48",
+  "id": "cfcc91bd-1732-4635-9116-78e2824fd8d5",
   "name": "games",
-  "timestamp": "2023-12-04T09:30:41.723Z",
+  "timestamp": "2023-12-11T14:54:22.957Z",
   "collection_id": "30615512-808d8cfc-7d04-4123-bbd1-1cd3e6e30b24",
   "folder_id": 0,
   "environment_id": "0",
@@ -9,55 +9,41 @@
   "delay": 0,
   "persist": true,
   "status": "finished",
-  "startedAt": "2023-12-04T09:30:38.455Z",
+  "startedAt": "2023-12-11T14:54:17.619Z",
   "totalFail": 0,
   "results": [
     {
       "id": "54fe142a-8b97-459c-a0a0-e16d356f7732",
       "name": "games",
-      "url": "http://localhost:3693/games",
-      "time": 112,
+      "url": "http://localhost:3709/games",
+      "time": 51,
       "responseCode": {
         "code": 200,
         "name": "OK"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [112],
+      "times": [51],
       "allTests": [{}]
     },
     {
       "id": "557e6481-219b-4a1b-ac48-231069b07a33",
       "name": "ping",
-      "url": "http://localhost:3693/",
-      "time": 7,
+      "url": "http://localhost:3709/",
+      "time": 6,
       "responseCode": {
         "code": 200,
         "name": "OK"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [7],
+      "times": [6],
       "allTests": [{}]
     },
     {
       "id": "bd5ec8f6-6cd5-4a11-becf-04f51ad8bc52",
       "name": "not Found",
-      "url": "http://localhost:3693/segfesgE",
-      "time": 7,
-      "responseCode": {
-        "code": 404,
-        "name": "Not Found"
-      },
-      "tests": {},
-      "testPassFailCounts": {},
-      "times": [7],
-      "allTests": [{}]
-    },
-    {
-      "id": "64c01be3-cf44-45f5-b2fc-a4800b19840f",
-      "name": "game error delete",
-      "url": "http://localhost:3693/games/delete/2141512353",
+      "url": "http://localhost:3709/segfesgE",
       "time": 10,
       "responseCode": {
         "code": 404,
@@ -69,92 +55,218 @@
       "allTests": [{}]
     },
     {
+      "id": "64c01be3-cf44-45f5-b2fc-a4800b19840f",
+      "name": "game error delete",
+      "url": "http://localhost:3709/games/delete/2141512353",
+      "time": 23,
+      "responseCode": {
+        "code": 404,
+        "name": "Not Found"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [23],
+      "allTests": [{}]
+    },
+    {
       "id": "121283c8-1719-46ff-bf0c-871dc1b5a7b9",
       "name": "game delete",
-      "url": "http://localhost:3693/games/delete/656ab3423eb96014d34e07de",
-      "time": 1082,
+      "url": "http://localhost:3709/games/delete/6575e6b183bdd1a39944c2bf",
+      "time": 124,
       "responseCode": {
         "code": 200,
         "name": "OK"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [1082],
+      "times": [124],
+      "allTests": [{}]
+    },
+    {
+      "id": "79d8a026-b1eb-4275-9203-bbbd58114d15",
+      "name": "game edit",
+      "url": "http://localhost:3709/games/edit",
+      "time": 2479,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [2479],
+      "allTests": [{}]
+    },
+    {
+      "id": "f609cb1d-9865-487c-bab2-ad2a58f156f5",
+      "name": "game add",
+      "url": "http://localhost:3709/games/add",
+      "time": 8,
+      "responseCode": {
+        "code": 400,
+        "name": "Bad Request"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [8],
+      "allTests": [{}]
+    },
+    {
+      "id": "9b31db3d-6a63-40a3-8cd8-74c56fedbdc8",
+      "name": "game info",
+      "url": "http://localhost:3709/games/info/6575e35f83bdd1a39944c2b7",
+      "time": 51,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [51],
+      "allTests": [{}]
+    },
+    {
+      "id": "85ee816e-1598-453f-95b7-f49c9c99b1b7",
+      "name": "games page 1",
+      "url": "http://localhost:3709/games?page=1",
+      "time": 51,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [51],
       "allTests": [{}]
     },
     {
       "id": "5f1d93ce-1856-498c-827c-6c3e9b1bebc0",
       "name": "games",
       "url": "https://matias-risco-202309-bcn-back.onrender.com/games",
-      "time": 276,
+      "time": 119,
       "responseCode": {
         "code": 200,
         "name": "OK"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [276],
+      "times": [119],
       "allTests": [{}]
     },
     {
       "id": "ac45e578-a498-4906-a586-3cb9094bc706",
       "name": "ping",
       "url": "https://matias-risco-202309-bcn-back.onrender.com/",
-      "time": 76,
+      "time": 84,
       "responseCode": {
         "code": 200,
         "name": "OK"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [76],
+      "times": [84],
       "allTests": [{}]
     },
     {
       "id": "f77346a3-ae4b-4879-bf08-c33a7054cbbf",
       "name": "not Found",
       "url": "https://matias-risco-202309-bcn-back.onrender.com/segfesgE",
-      "time": 129,
+      "time": 81,
       "responseCode": {
         "code": 404,
         "name": "Not Found"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [129],
+      "times": [81],
       "allTests": [{}]
     },
     {
       "id": "5bb0fcb4-36cd-4a04-8609-7ccab70c8d6c",
       "name": "game error delete",
       "url": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/2141512353",
-      "time": 74,
+      "time": 90,
       "responseCode": {
         "code": 404,
         "name": "Not Found"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [74],
+      "times": [90],
       "allTests": [{}]
     },
     {
       "id": "493ca351-e318-449c-8655-ef1b4b10d341",
       "name": "game delete",
-      "url": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/656ab2e33eb96014d34e07dd",
-      "time": 156,
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/games/delete/6576064af59ec6081437c679",
+      "time": 103,
       "responseCode": {
         "code": 200,
         "name": "OK"
       },
       "tests": {},
       "testPassFailCounts": {},
-      "times": [156],
+      "times": [103],
+      "allTests": [{}]
+    },
+    {
+      "id": "4ef168a3-637d-4fb4-a54c-131e718641a8",
+      "name": "game edit",
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/games/edit",
+      "time": 128,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [128],
+      "allTests": [{}]
+    },
+    {
+      "id": "533bbe74-f294-42d4-afb6-49b1c4f58465",
+      "name": "game add",
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/games/add",
+      "time": 79,
+      "responseCode": {
+        "code": 400,
+        "name": "Bad Request"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [79],
+      "allTests": [{}]
+    },
+    {
+      "id": "749d1a23-d1d3-4cad-9b5f-0fb0948b6309",
+      "name": "game info",
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/games/info/6575e35f83bdd1a39944c2b7",
+      "time": 140,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [140],
+      "allTests": [{}]
+    },
+    {
+      "id": "00168254-471f-4d45-a259-0c59e75e0f5e",
+      "name": "games page 1",
+      "url": "https://matias-risco-202309-bcn-back.onrender.com/games?page=1",
+      "time": 163,
+      "responseCode": {
+        "code": 200,
+        "name": "OK"
+      },
+      "tests": {},
+      "testPassFailCounts": {},
+      "times": [163],
       "allTests": [{}]
     }
   ],
   "count": 1,
-  "totalTime": 1929,
+  "totalTime": 3790,
   "collection": {
     "requests": [
       {
@@ -178,6 +290,22 @@
         "method": "DELETE"
       },
       {
+        "id": "79d8a026-b1eb-4275-9203-bbbd58114d15",
+        "method": "PATCH"
+      },
+      {
+        "id": "f609cb1d-9865-487c-bab2-ad2a58f156f5",
+        "method": "POST"
+      },
+      {
+        "id": "9b31db3d-6a63-40a3-8cd8-74c56fedbdc8",
+        "method": "GET"
+      },
+      {
+        "id": "85ee816e-1598-453f-95b7-f49c9c99b1b7",
+        "method": "GET"
+      },
+      {
         "id": "5f1d93ce-1856-498c-827c-6c3e9b1bebc0",
         "method": "GET"
       },
@@ -196,6 +324,22 @@
       {
         "id": "493ca351-e318-449c-8655-ef1b4b10d341",
         "method": "DELETE"
+      },
+      {
+        "id": "4ef168a3-637d-4fb4-a54c-131e718641a8",
+        "method": "PATCH"
+      },
+      {
+        "id": "533bbe74-f294-42d4-afb6-49b1c4f58465",
+        "method": "POST"
+      },
+      {
+        "id": "749d1a23-d1d3-4cad-9b5f-0fb0948b6309",
+        "method": "GET"
+      },
+      {
+        "id": "00168254-471f-4d45-a259-0c59e75e0f5e",
+        "method": "GET"
       }
     ]
   }

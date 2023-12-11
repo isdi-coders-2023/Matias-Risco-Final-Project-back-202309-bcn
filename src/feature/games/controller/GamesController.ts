@@ -6,14 +6,17 @@ import {
   type GameBodyResponseParams,
   type GameIdRequestParams,
   type GamesResponseBody,
+  type RequestQuery,
 } from "./types";
 import CustomError from "../../../server/CustomError/CustomError.js";
 
 class GamesController {
   constructor(private readonly gamesRepository: GamesRepositoryStructure) {}
 
-  getGames = async (_res: Request, res: GamesResponseBody) => {
-    const games = await this.gamesRepository.getGames();
+  getGames = async (req: Request, res: GamesResponseBody) => {
+    const page = (req.query as RequestQuery)?.page;
+
+    const games = await this.gamesRepository.getGames(page);
     res.status(200).json({ games });
   };
 
