@@ -10,11 +10,7 @@ import Games from "../model/Games.js";
 class GamesRepository implements GamesRepositoryStructure {
   async getGames(page = ""): Promise<GameStructureApi[]> {
     const numPage = 10 * parseInt(page, 10) || 0;
-    const games = await Games.find()
-      .sort("name difficulty")
-      .skip(numPage)
-      .limit(10)
-      .lean();
+    const games = await Games.find().skip(numPage).limit(10).lean();
 
     return gamesToApi(games);
   }
