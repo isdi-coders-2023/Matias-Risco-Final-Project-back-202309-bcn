@@ -1,4 +1,4 @@
-# GAMEING
+# ValvePipeApi
 
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=isdi-coders-2023_Matias-Risco-Final-Project-back-202309-bcn)](https://sonarcloud.io/summary/new_code?id=isdi-coders-2023_Matias-Risco-Final-Project-back-202309-bcn)
 
