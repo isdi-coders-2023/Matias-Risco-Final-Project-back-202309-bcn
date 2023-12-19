@@ -113,7 +113,7 @@ class GamesController {
     next: NextFunction,
   ) => {
     try {
-      const numberGames = await this.gamesRepository.countGame!();
+      const numberGames = await this.gamesRepository.countGame();
 
       res.status(200).json({ numberGames });
     } catch (error) {
