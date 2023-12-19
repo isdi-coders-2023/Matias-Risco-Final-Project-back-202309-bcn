@@ -1,11 +1,11 @@
 import { type NextFunction } from "express";
-import { type UserRepositoryStructure } from "../repository/types";
+import { type UsersRepositoryStructure } from "../repository/types";
 import { type UserCreateResponse, type UserCreateRequest } from "./types";
 import bcrypt from "bcrypt";
 import CustomError from "../../../server/CustomError/CustomError";
 
 class UserController {
-  constructor(private readonly userRepository: UserRepositoryStructure) {}
+  constructor(private readonly userRepository: UsersRepositoryStructure) {}
 
   createUser = async (
     req: UserCreateRequest,
