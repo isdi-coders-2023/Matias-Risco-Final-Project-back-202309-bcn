@@ -9,7 +9,7 @@ class UsersRepository implements UsersRepositoryStructure {
   userCreate = async (
     userBase: UserWithOutIdStructure,
   ): Promise<UserWithOutPasswordStructure> => {
-    const { password, _id, name } = (await Users.create(userBase)).toJSON();
+    const { _id, name } = (await Users.create(userBase)).toJSON();
 
     return { name, id: _id };
   };
