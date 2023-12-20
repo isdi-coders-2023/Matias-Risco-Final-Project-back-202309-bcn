@@ -2,7 +2,7 @@ import { type NextFunction } from "express";
 import { type UsersRepositoryStructure } from "../repository/types";
 import { type UserCreateResponse, type UserCreateRequest } from "./types";
 import bcrypt from "bcrypt";
-import CustomError from "../../../server/CustomError/CustomError";
+import CustomError from "../../../server/CustomError/CustomError.js";
 
 class UserController {
   constructor(private readonly userRepository: UsersRepositoryStructure) {}
@@ -14,7 +14,6 @@ class UserController {
   ) => {
     try {
       const { user } = req.body;
-
       const hashedPasword = await bcrypt.hash(user.name + user.password, 11);
       user.password = hashedPasword;
 

@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { validate } from "express-validation";
-import UsersRepository from "../repository/UsersRepository";
-import UserController from "../controller/UserController";
-import { addUserValidator } from "../model/validator";
+import UsersRepository from "../repository/UsersRepository.js";
+import UserController from "../controller/UserController.js";
+import { addUserValidator } from "../model/validator.js";
 
 const usersRepository = new UsersRepository();
 const usersController = new UserController(usersRepository);
