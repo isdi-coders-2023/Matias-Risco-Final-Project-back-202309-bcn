@@ -3,7 +3,7 @@ import {
   type UserWithOutIdStructure,
 } from "../types";
 
-export interface UserRepositoryStructure {
+export interface UsersRepositoryStructure {
   userCreate?: (
     userBase: UserWithOutIdStructure,
   ) => Promise<UserWithOutPasswordStructure>;

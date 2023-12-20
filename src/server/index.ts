@@ -8,12 +8,14 @@ import {
   generalError,
 } from "./middlewares/errorMiddleware.js";
 import gamesRouter from "../feature/games/router/gamesRouter.js";
+import userRouter from "../feature/user/router/userRouter.js";
 
 app.use(cors(corsOptions));
 app.use(morgan("dev"));
 
 app.get("/", pingRouter);
 app.use("/games", gamesRouter);
+app.use("/users", userRouter);
 
 app.use(endpointNotFound);
 app.use(generalError);

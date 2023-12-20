@@ -1,6 +1,6 @@
 import { type NextFunction } from "express";
 import { type UserCreateResponse, type UserCreateRequest } from "../types";
-import { type UserRepositoryStructure } from "../../repository/types";
+import { type UsersRepositoryStructure } from "../../repository/types";
 import {
   type UserWithOutIdStructure,
   type UserWithOutPasswordStructure,
@@ -33,7 +33,7 @@ describe("Given the method createUser in class UserController", () => {
   const next: NextFunction = jest.fn();
 
   describe("When it is call with a request given a username and password", () => {
-    const userRepository: Partial<UserRepositoryStructure> = {
+    const userRepository: Partial<UsersRepositoryStructure> = {
       userCreate: async ({
         name,
       }: UserWithOutIdStructure): Promise<UserWithOutPasswordStructure> => ({
@@ -74,7 +74,7 @@ describe("Given the method createUser in class UserController", () => {
 
   describe("When it is call with a request given a username and password but there is a error", () => {
     test("Then it should call next with 500 'Error in register new User'", async () => {
-      const userRepository: Partial<UserRepositoryStructure> = {
+      const userRepository: Partial<UsersRepositoryStructure> = {
         async userCreate() {
           throw new Error("yellow");
         },
