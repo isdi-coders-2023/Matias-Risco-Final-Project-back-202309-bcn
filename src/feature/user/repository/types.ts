@@ -4,7 +4,11 @@ import {
 } from "../types";
 
 export interface UsersRepositoryStructure {
-  userCreate?: (
+  userCreate: (
+    userBase: UserWithOutIdStructure,
+  ) => Promise<UserWithOutPasswordStructure>;
+
+  userLogin?: (
     userBase: UserWithOutIdStructure,
   ) => Promise<UserWithOutPasswordStructure>;
 }
