@@ -4,7 +4,7 @@ import {
   type UserWithOutIdStructure,
 } from "../types";
 
-export type UserCreateRequest = Request<
+export type UserBodyRequest = Request<
   Record<string, unknown>,
   Record<string, unknown>,
   { user: UserWithOutIdStructure }
@@ -12,4 +12,8 @@ export type UserCreateRequest = Request<
 
 export type UserCreateResponse = Response<{
   user: UserWithOutPasswordStructure;
+}>;
+
+export type UserTokenResponse = Response<{
+  token: string;
 }>;

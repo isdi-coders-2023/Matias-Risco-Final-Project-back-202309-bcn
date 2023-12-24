@@ -1,5 +1,5 @@
 import { type NextFunction } from "express";
-import { type UserCreateResponse, type UserCreateRequest } from "../types";
+import { type UserCreateResponse, type UserBodyRequest } from "../types";
 import { type UsersRepositoryStructure } from "../../repository/types";
 import {
   type UserWithOutIdStructure,
@@ -16,7 +16,7 @@ beforeEach(() => {
 describe("Given the method createUser in class UserController", () => {
   const name = "Alfaruis";
   const id = "arswegliyasWEGF342rt51i7s";
-  const req: Partial<UserCreateRequest> = {
+  const req: Partial<UserBodyRequest> = {
     body: {
       user: {
         name,
@@ -42,13 +42,15 @@ describe("Given the method createUser in class UserController", () => {
       }),
     };
 
-    const userController = new UserController(userRepository);
+    const userController = new UserController(
+      userRepository as UsersRepositoryStructure,
+    );
 
     test("Then it should call status with 200", async () => {
       const expectedCode = 200;
 
       await userController.createUser(
-        req as UserCreateRequest,
+        req as UserBodyRequest,
         res as UserCreateResponse,
         next,
       );
@@ -63,7 +65,7 @@ describe("Given the method createUser in class UserController", () => {
       };
 
       await userController.createUser(
-        req as UserCreateRequest,
+        req as UserBodyRequest,
         res as UserCreateResponse,
         next,
       );
@@ -80,7 +82,9 @@ describe("Given the method createUser in class UserController", () => {
         },
       };
 
-      const userController = new UserController(userRepository);
+      const userController = new UserController(
+        userRepository as UsersRepositoryStructure,
+      );
 
       const expectError: Partial<CustomError> = {
         statusCode: 500,
@@ -88,7 +92,7 @@ describe("Given the method createUser in class UserController", () => {
       };
 
       await userController.createUser(
-        req as UserCreateRequest,
+        req as UserBodyRequest,
         res as UserCreateResponse,
         next,
       );
